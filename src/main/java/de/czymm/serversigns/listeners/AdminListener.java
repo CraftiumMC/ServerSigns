@@ -45,7 +45,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.nio.charset.StandardCharsets;
@@ -61,16 +60,6 @@ public class AdminListener implements Listener {
 
     public AdminListener(ServerSignsPlugin instance) {
         this.plugin = instance;
-    }
-
-    @EventHandler(priority = EventPriority.LOWEST)
-    public void onDeveloperJoin(PlayerJoinEvent event) {
-        if (event.getPlayer().getName().equalsIgnoreCase("ExLoki") || event.getPlayer().getName().equalsIgnoreCase("CalibeR93") || event.getPlayer().getName().equalsIgnoreCase("Steffencz")) {
-            if (plugin.config.getBroadcastDevelopers()) {
-                Bukkit.broadcastMessage(ChatColor.DARK_GREEN + "[ServerSigns] " + ChatColor.YELLOW + event.getPlayer().getName() + " is an author of ServerSigns!");
-            }
-            event.getPlayer().sendMessage("Running version: " + plugin.getDescription().getVersion());
-        }
     }
 
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = false)
