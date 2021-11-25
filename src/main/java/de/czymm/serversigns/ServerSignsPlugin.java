@@ -58,7 +58,7 @@ import java.util.regex.Matcher;
 
 public class ServerSignsPlugin extends JavaPlugin {
     private static Logger logger;
-    private Metrics metrics;
+    //private Metrics metrics;
 
     public Updater update;
     public PluginManager pm;
@@ -120,7 +120,7 @@ public class ServerSignsPlugin extends JavaPlugin {
 
             messageFormatter = MessageFormatter.getFormatter(hookManager);
 
-            if (config.getCheckForUpdates()) {
+            /*if (config.getCheckForUpdates()) {
                 update = new Updater(this, 33254, this.getFile(), Updater.UpdateType.DEFAULT, true);
             } else {
                 log("Update checking skipped - To enable this, set 'check_for_updates' to true in your config.yml");
@@ -134,7 +134,7 @@ public class ServerSignsPlugin extends JavaPlugin {
                 } catch (IOException e) {
                     // Failed to submit the stats D:
                 }
-            }
+            }*/
 
             SVSMetaManager.clear();
 
@@ -151,13 +151,13 @@ public class ServerSignsPlugin extends JavaPlugin {
             taskManager.stop();
         }
 
-        if (metrics != null && metrics.isOptOut()) {
+        /*if (metrics != null && metrics.isOptOut()) {
             try {
                 metrics.disable();
             } catch (IOException e) {
                 // Fail to kill task on disable
             }
-        }
+        }*/
 
         log(getDescription().getName() + " is now disabled.");
     }

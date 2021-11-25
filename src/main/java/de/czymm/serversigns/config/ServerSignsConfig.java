@@ -94,8 +94,8 @@ public class ServerSignsConfig implements IServerSignsConfig {
             "# If enabled, this means commands executed through ServerSigns will fire the command pre-process event"})
     private boolean alternate_command_dispatching = false;
 
-    @PersistenceEntry(comments = {"# Whether or not you want to opt-out of Metrics statistic gathering through www.mcstats.org"})
-    private boolean metrics_opt_out = false;
+    /*@PersistenceEntry(comments = {"# Whether or not you want to opt-out of Metrics statistic gathering through www.mcstats.org"})
+    private boolean metrics_opt_out = false;*/
 
     @PersistenceEntry(comments = {"# A list of commands which cannot be attached to ServerSigns (to prevent console-only command exploits)"})
     private List<String> blocked_commands = Arrays.asList("op", "deop", "stop");
@@ -228,9 +228,9 @@ public class ServerSignsConfig implements IServerSignsConfig {
         return alternate_command_dispatching;
     }
 
-    public boolean getMetricsOptOut() {
+    /*public boolean getMetricsOptOut() {
         return metrics_opt_out;
-    }
+    }*/
 
     public List<String> getBlockedCommands() {
         return blocked_commands;
